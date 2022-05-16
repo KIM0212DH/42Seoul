@@ -6,7 +6,7 @@
 /*   By: dokim2 <dokim2@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 18:05:43 by dokim2            #+#    #+#             */
-/*   Updated: 2022/04/04 18:13:52 by dokim2           ###   ########.fr       */
+/*   Updated: 2022/05/16 18:13:09 by dokim2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!new)
 		{
 			ft_lstclear(&ret, del);
-			return ((void*)(0));
+			return ((void *)(0));
 		}
 		ft_lstadd_back(&ret, new);
 		lst = lst->next;

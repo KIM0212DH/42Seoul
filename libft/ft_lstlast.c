@@ -6,7 +6,7 @@
 /*   By: dokim2 <dokim2@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 17:26:02 by dokim2            #+#    #+#             */
-/*   Updated: 2022/03/30 17:59:52 by dokim2           ###   ########.fr       */
+/*   Updated: 2022/05/16 18:11:01 by dokim2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list	*ft_lstlast(t_list *lst)
 	while (ret != 0)
 	{
 		if (ret->next == 0)
-			break;
+			break ;
 		ret = ret->next;
 	}
 	return (ret);

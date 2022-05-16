@@ -6,15 +6,15 @@
 /*   By: dokim2 <dokim2@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:47:23 by dokim2            #+#    #+#             */
-/*   Updated: 2022/04/01 16:23:38 by dokim2           ###   ########.fr       */
+/*   Updated: 2022/05/16 18:19:48 by dokim2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_startcheck(void)
+static char	*ft_startcheck(void)
 {
-	char *rtv;
+	char	*rtv;
 
 	rtv = malloc(sizeof(char));
 	if (rtv == 0)
@@ -23,7 +23,7 @@ char *ft_startcheck(void)
 	return (rtv);
 }
 
-int lencheck(char const *s, unsigned int start, size_t len)
+static int	lencheck(char const *s, unsigned int start, size_t len)
 {
 	if ((ft_strlen(s) - start) < len)
 		return ((ft_strlen(s) - start));
@@ -31,11 +31,11 @@ int lencheck(char const *s, unsigned int start, size_t len)
 		return (len);
 }
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t i;
-	size_t j;
-	char *sub;
+	size_t	i;
+	size_t	j;
+	char	*sub;
 
 	i = 0;
 	j = 0;
