@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	get_digits(int n)
+static size_t	get_digits(int n)
 {
 	size_t	ret;
 	long	num;
