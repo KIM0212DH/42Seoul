@@ -22,6 +22,7 @@ static char	*ft_strndup(const char *s, size_t n)
 	if (n == 0)
 		return (NULL);
 	str = (char *)malloc(sizeof(char) * (n + 1));
+	ft_memset(str, 0, n);
 	if (str == 0)
 		return (NULL);
 	while (i < n)
@@ -49,32 +50,34 @@ static char	**ft_freeall(char **list)
 
 static size_t	ft_wordcount(char const *s, char c)
 {
-	size_t	listsize;
+	size_t	word_count;
 	size_t	i;
 
 	i = 0;
-	listsize = 0;
+	word_count = 0;
 	while (s[i] != '\0')
 	{
 		if ((i == 0 && s[i] != c)
 			|| (s[i] == c && s[i + 1] != '\0' && s[i + 1] != c))
-			listsize++;
+			word_count++;
 		i++;
 	}
-	return (listsize);
+	return (word_count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**strlist;
+	char	**ret;
 	size_t	i;
 	size_t	k;
 	size_t	save;
 
 	i = 0;
 	k = 0;
-	strlist = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
-	if (!strlist)
+	if (s == 0)
+		return (0);
+	ret = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
+	if (!ret)
 		return (NULL);
 	while (i < ft_wordcount(s, c) && s[k] != '\0')
 	{
@@ -83,10 +86,10 @@ char	**ft_split(char const *s, char c)
 		save = k;
 		while (s[k] != c && s[k] != '\0')
 			k++;
-		strlist[i] = ft_strndup(&s[save], k - save);
-		if (strlist[i++] == 0)
-			return (ft_freeall(strlist));
+		ret[i] = ft_strndup(&s[save], k - save);
+		if (ret[i++] == 0)
+			return (ft_freeall(ret));
 	}
-	strlist[i] = NULL;
-	return (strlist);
+	ret[i] = 0;
+	return (ret);
 }
