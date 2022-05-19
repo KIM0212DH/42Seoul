@@ -22,9 +22,9 @@ static char	*ft_strndup(const char *s, size_t n)
 	if (n == 0)
 		return (NULL);
 	str = (char *)malloc(sizeof(char) * (n + 1));
-	ft_memset(str, 0, n);
 	if (str == 0)
 		return (NULL);
+	ft_memset(str, 0, n);
 	while (i < n)
 	{
 		str[i] = s[i];
