@@ -14,7 +14,7 @@
 # define    FT_PRINTF_H
 # include <stdlib.h>
 # include <stdarg.h>
-# include "libft/libft.h"
+# include <unistd.h>
 
 int		ft_printf(const char *input, ...);
 int		check_type(char n_arg);

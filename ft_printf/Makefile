@@ -13,9 +13,7 @@
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 SRC		= ft_printf.c check_type.c type_op.c write_sum.c
-#SRC_B = 
 OBJECT	= $(SRC:.c=.o)
-OBJECT_B = $(SRC_B:.c=.o)
 INCS	= ft_printf.h
 NAME = libftprintf.a
 DO_BONUS = 0
@@ -29,12 +27,10 @@ endif
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(INCS)
 $(NAME) : $(OBJECTS) $(INCS)
 	ar rc $(NAME) $(OBJECTS)
-#bonus :
-#	make DO_BONUS=1
 all : $(NAME)
 clean :
 	rm -f $(OBJECT) $(OBJECT_B)
 fclean : clean
 	rm -f $(NAME)
 re : fclean all
-.PHONY : all clean fclean re bonus
+.PHONY : all clean fclean re

@@ -23,7 +23,7 @@ void	type_op(char arg, int *count, va_list *ap)
 		*count = *count + write(1, &vachar, 1);
 	}
 	else if (arg == 's')
-		ft_printfstr(count, (char *)va_arg(*ap, char *));
+		ft_printfstr(count, (char *) va_arg(*ap, char *));
 	else if (arg == 'i' || arg == 'd')
 		ft_printfnbr_i(count, va_arg(*ap, int));
 	else if (arg == 'u')
